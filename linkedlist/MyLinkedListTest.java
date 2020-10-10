@@ -98,5 +98,21 @@ class MyLinkedListTest {
 		assertEquals(mySecondNode, searchAndInsert);
 		myLinkedList.printMyNodes();
 	}
+	@Test 
+	public void delTheFortyAndShowTheSizeOfTheLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		MyNode<Integer> searchAndDelete = (MyNode<Integer>) myLinkedList.searchAndDelete(40);
+		assertEquals(mySecondNode, searchAndDelete);
+		System.out.println("Size of Linked List is:"+myLinkedList.size());
+		myLinkedList.printMyNodes();
+	}
 
 }
