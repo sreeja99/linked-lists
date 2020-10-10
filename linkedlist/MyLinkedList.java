@@ -9,15 +9,13 @@ public class MyLinkedList {
 	}
 
 	public void add(INode newNode) {
-		// TODO Auto-generated method stub
 		if(this.tail == null)
 			this.tail = newNode;
 		if(this.head == null)
 			this.head = newNode;
 		else {
-			INode tempNode = this.head;
-			this.head = newNode;
-			this.head.setNext(tempNode);
+			this.tail.setNext(newNode);
+			this.tail = newNode;
 		}
 	}
 
