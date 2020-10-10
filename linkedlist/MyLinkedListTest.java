@@ -71,5 +71,18 @@ class MyLinkedListTest {
 		assertEquals(myThirdNode, popLast);
 		myLinkedList.printMyNodes();
 	}
+	@Test
+	public void searchForThirtyKeyValue() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
+		assertEquals(mySecondNode, search);
+		myLinkedList.printMyNodes();
+	}
 
 }
