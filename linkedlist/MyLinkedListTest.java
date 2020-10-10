@@ -65,8 +65,8 @@ class MyLinkedListTest {
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
 		MyLinkedList myLinkedList = new MyLinkedList();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
 		MyNode<Integer> popLast = (MyNode<Integer>) myLinkedList.popLast();
 		assertEquals(myThirdNode, popLast);
 		myLinkedList.printMyNodes();
@@ -78,10 +78,24 @@ class MyLinkedListTest {
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
 		MyLinkedList myLinkedList = new MyLinkedList();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
 		MyNode<Integer> search = (MyNode<Integer>) myLinkedList.search(30);
 		assertEquals(mySecondNode, search);
+		myLinkedList.printMyNodes();
+	}
+	@Test
+	public void searchAndInsertForty() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(40);
+		MyNode<Integer> searchAndInsert = (MyNode<Integer>) myLinkedList.searchAndInsert(30,myFourthNode);
+		assertEquals(mySecondNode, searchAndInsert);
 		myLinkedList.printMyNodes();
 	}
 
