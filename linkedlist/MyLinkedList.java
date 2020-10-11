@@ -1,6 +1,8 @@
 package com.capgemini.linkedlist;
 
-public class MyLinkedList<K> {
+import java.util.Comparator;
+
+public class MyLinkedList<K extends Comparable> {
 	public INode head;
 	public INode tail;
 	public int size=0;
@@ -108,6 +110,24 @@ public class MyLinkedList<K> {
 
 	public int size() {
 		return size;
+	}
+
+	public void addSorted(INode newNode) {
+		INode tempNode;
+
+		if (head == null || ((Comparable) head.getKey()).compareTo(newNode.getKey()) >= 0) {
+			newNode.setNext(head);
+			head = newNode;
+		} else {
+			tempNode = head;
+			while (tempNode.getNext() != null && ((Comparable) tempNode.getNext().getKey()).compareTo(newNode.getKey()) < 0) {
+				tempNode = tempNode.getNext();
+				newNode.setNext(tempNode.getNext());
+				tempNode.setNext(newNode);
+			}
+			size++;
+		}
+		
 	}
 	
 }

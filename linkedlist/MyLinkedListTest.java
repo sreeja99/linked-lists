@@ -114,5 +114,24 @@ class MyLinkedListTest {
 		System.out.println("Size of Linked List is:"+myLinkedList.size());
 		myLinkedList.printMyNodes();
 	}
+	@Test
+	public void PrintOrderedLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(70);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(100);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(5);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.addSorted(myFirstNode);
+		myLinkedList.addSorted(mySecondNode);
+		myLinkedList.addSorted(myThirdNode);
+		myLinkedList.addSorted(myFourthNode);
+		myLinkedList.printMyNodes();
+		System.out.print("Sorted Nodes :");
+		boolean result = myLinkedList.head.equals(myFourthNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.head.getNext().getNext().equals(myFirstNode)
+				&& myLinkedList.head.getNext().getNext().getNext().equals(myThirdNode);
+		assertEquals(true, result);
+
+	}
 
 }
