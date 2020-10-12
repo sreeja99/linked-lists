@@ -21,6 +21,7 @@ public class MyLinkedList<K extends Comparable> {
 			this.head = newNode;
 			this.head.setNext(tempNode);
 		}
+		size++;
 	}
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
@@ -39,6 +40,7 @@ public class MyLinkedList<K extends Comparable> {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
+		size++;
 	}
 
 	public void append(INode newNode) {
@@ -50,6 +52,7 @@ public class MyLinkedList<K extends Comparable> {
 			this.tail.setNext(newNode);
 			this.tail = newNode;
 		}
+		size++;
 	}
 	public INode pop() {
 		INode tempNode =head.getNext();
